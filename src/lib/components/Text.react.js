@@ -2,7 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import { omit } from "ramda";
 import { Text as MantineText } from "@mantine/core";
-import { GradientType, MantineColors, NumberSizes, Sizes } from "../propTypes";
+import {
+    FontWeights,
+    GradientType,
+    MantineColors,
+    Sizes,
+    TextAlignProperty,
+    TextVariants,
+    TransformTypes,
+} from "../propTypes";
 
 /** Render text and links with theme styles. For more information, see: https://mantine.dev/core/text/ */
 const Text = (props) => {
@@ -31,7 +39,7 @@ Text.propTypes = {
     className: PropTypes.string,
 
     /** Sets text-align css property */
-    align: PropTypes.oneOf(["left", "right", "center"]),
+    align: TextAlignProperty,
 
     /** Text color from theme */
     color: MantineColors,
@@ -48,30 +56,17 @@ Text.propTypes = {
     /** CSS -webkit-line-clamp property */
     lineClamp: PropTypes.number,
 
-    /** Button border-radius from theme or number to set border-radius in px */
-    radius: NumberSizes,
-
     /** Predefined font-size from theme.fontSizes */
     size: Sizes,
 
     /** Sets text-transform css property */
-    transform: PropTypes.oneOf(["capitalize", "uppercase", "lowercase"]),
+    transform: TransformTypes,
 
     /** Link or text variant */
-    variant: PropTypes.oneOf(["link", "gradient", "text"]),
+    variant: TextVariants,
 
     /**	Sets font-weight css property */
-    weight: PropTypes.oneOfType([
-        PropTypes.oneOf([
-            "normal",
-            "bold",
-            "bolder",
-            "lighter",
-            "initial",
-            "inherit",
-        ]),
-        PropTypes.number,
-    ]),
+    weight: FontWeights,
 
     /** Inline style override */
     style: PropTypes.object,

@@ -16,7 +16,7 @@ Keyword arguments:
     The ID of this component, used to identify dash components in
     callbacks.
 
-- align (a value equal to: "left", "right", "center"; optional):
+- align (optional):
     Sets text-align css property.
 
 - className (string; optional):
@@ -37,31 +37,27 @@ Keyword arguments:
 - lineClamp (number; optional):
     CSS -webkit-line-clamp property.
 
-- radius (optional):
-    Button border-radius from theme or number to set border-radius in
-    px.
-
 - size (optional):
     Predefined font-size from theme.fontSizes.
 
 - style (dict; optional):
     Inline style override.
 
-- transform (a value equal to: "capitalize", "uppercase", "lowercase"; optional):
+- transform (optional):
     Sets text-transform css property.
 
-- variant (a value equal to: "link", "gradient", "text"; optional):
+- variant (optional):
     Link or text variant.
 
-- weight (a value equal to: "normal", "bold", "bolder", "lighter", "initial", "inherit" | number; optional):
+- weight (optional):
     Sets font-weight css property."""
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, align=Component.UNDEFINED, color=Component.UNDEFINED, gradient=Component.UNDEFINED, inherit=Component.UNDEFINED, inline=Component.UNDEFINED, lineClamp=Component.UNDEFINED, radius=Component.UNDEFINED, size=Component.UNDEFINED, transform=Component.UNDEFINED, variant=Component.UNDEFINED, weight=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['children', 'id', 'align', 'className', 'color', 'gradient', 'inherit', 'inline', 'lineClamp', 'radius', 'size', 'style', 'transform', 'variant', 'weight']
+    def __init__(self, children=None, id=Component.UNDEFINED, className=Component.UNDEFINED, align=Component.UNDEFINED, color=Component.UNDEFINED, gradient=Component.UNDEFINED, inherit=Component.UNDEFINED, inline=Component.UNDEFINED, lineClamp=Component.UNDEFINED, size=Component.UNDEFINED, transform=Component.UNDEFINED, variant=Component.UNDEFINED, weight=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['children', 'id', 'align', 'className', 'color', 'gradient', 'inherit', 'inline', 'lineClamp', 'size', 'style', 'transform', 'variant', 'weight']
         self._type = 'Text'
         self._namespace = 'dash_mantine_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['children', 'id', 'align', 'className', 'color', 'gradient', 'inherit', 'inline', 'lineClamp', 'radius', 'size', 'style', 'transform', 'variant', 'weight']
+        self.available_properties = ['children', 'id', 'align', 'className', 'color', 'gradient', 'inherit', 'inline', 'lineClamp', 'size', 'style', 'transform', 'variant', 'weight']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
