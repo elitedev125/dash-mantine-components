@@ -1,4 +1,4 @@
-from dash import Dash, Input, Output, State, html
+from dash import Dash, html
 
 import dash_mantine_components as dmc
 
@@ -6,33 +6,17 @@ app = Dash(__name__)
 
 app.layout = html.Div(
     [
-        dmc.Skeleton(height=50, circle=True),
-        dmc.Skeleton(
-            id="overlay",
+        html.Div(
+            style={"width": 500},
             children=[
-                html.Div(
-                    children=[
-                        dmc.Text(
-                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi dolor nihil amet tempore magnam optio, numquam nostrum inventore tempora assumenda saepe, aut repellat. Temporibus aspernatur aperiam magnam debitis facere odio? Laborum fuga quam voluptas aut pariatur delectus repudiandae commodi tempora debitis dolores vero cumque magni cum, deserunt, ad tempore consectetur libero molestias similique nemo eum! Dolore maxime voluptate inventore atque."
-                        )
-                    ],
-                ),
+                dmc.Spoiler(
+                    "We Butter the Bread with Butter was founded in 2007 by Marcel Neumann, who was originally guitarist for Martin Kesici's band, and Tobias Schultka. The band was originally meant as a joke, but progressed into being a more serious musical duo. The name for the band has no particular meaning, although its origins were suggested from when the two original members were driving in a car operated by Marcel Neumann and an accident almost occurred. Neumann found Schultka so funny that he briefly lost control of the vehicle. Many of their songs from this point were covers of German folk tales and nursery rhymes.",
+                    initialState=True,
+                )
             ],
-            visible=True,
-        ),
-        dmc.Button("Toggle Overlay", id="button"),
+        )
     ]
 )
-
-
-@app.callback(
-    Output("overlay", "visible"),
-    Input("button", "n_clicks"),
-    State("overlay", "visible"),
-    prevent_initial_call=True,
-)
-def hide_skeleton(n_clicks, visible):
-    return not visible
 
 
 if __name__ == "__main__":
