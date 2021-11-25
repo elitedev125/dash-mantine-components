@@ -6,16 +6,56 @@ app = Dash(__name__)
 
 app.layout = html.Div(
     [
-        html.Div(
-            style={"width": 500},
-            children=[
-                dmc.Spoiler(
-                    "We Butter the Bread with Butter was founded in 2007 by Marcel Neumann, who was originally guitarist for Martin Kesici's band, and Tobias Schultka. The band was originally meant as a joke, but progressed into being a more serious musical duo. The name for the band has no particular meaning, although its origins were suggested from when the two original members were driving in a car operated by Marcel Neumann and an accident almost occurred. Neumann found Schultka so funny that he briefly lost control of the vehicle. Many of their songs from this point were covers of German folk tales and nursery rhymes.",
-                    initialState=True,
+        dmc.Center(
+            [
+                html.Div(
+                    style={"width": 340, "margin": "auto"},
+                    children=[
+                        dmc.Card(
+                            shadow="sm",
+                            padding=20,
+                            children=[
+                                dmc.Image(
+                                    src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80",
+                                    height=160,
+                                    width=340,
+                                    alt="Norway",
+                                    style={
+                                        "marginTop": "-20px",
+                                        "marginLeft": "-20px",
+                                        "marginBottom": "20px",
+                                    },
+                                ),
+                                dmc.Group(
+                                    position="apart",
+                                    style={"marginBottom": 5, "marginTop": 5},
+                                    children=[
+                                        dmc.Text("Norway Fjord Adventures", weight=500),
+                                        dmc.Badge(
+                                            "On Sale", color="pink", variant="light"
+                                        ),
+                                    ],
+                                ),
+                                dmc.Text(
+                                    " With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+                                    size="sm",
+                                    style={"lineHeight": 1.5},
+                                ),
+                                dmc.Button(
+                                    "Book classic tour now",
+                                    color="blue",
+                                    variant="light",
+                                    fullWidth=True,
+                                    style={"marginTop": 14},
+                                ),
+                            ],
+                        )
+                    ],
                 )
-            ],
+            ]
         )
-    ]
+    ],
+    style={"background": "#f8f9fa", "padding": 20},
 )
 
 
