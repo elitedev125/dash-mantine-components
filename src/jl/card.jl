@@ -9,7 +9,7 @@ export card
 
 
 A Card component.
-Card.Section is a special component that is used to remove Card padding from its children while other elements still have horizontal spacing. For more information, see: https://mantine.dev/core/card/
+Card with context styles for Image and Divider components. For more information, see: https://mantine.dev/core/card/
 Keyword arguments:
 - `children` (a list of or a singular dash component, string or number; optional): Card content
 - `id` (String; optional): The ID of this component, used to identify dash components in callbacks

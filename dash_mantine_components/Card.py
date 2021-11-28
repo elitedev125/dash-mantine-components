@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Card(Component):
     """A Card component.
-Card.Section is a special component that is used to remove Card padding from its children while other elements still have horizontal spacing. For more information, see: https://mantine.dev/core/card/
+Card with context styles for Image and Divider components. For more information, see: https://mantine.dev/core/card/
 
 Keyword arguments:
 
