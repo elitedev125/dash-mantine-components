@@ -9,7 +9,8 @@ app = Dash(__name__)
 app.layout = html.Div(
     [
         dmc.NotificationsProvider(
-            dmc.NotificationHandler(id="handler"), autoClose=False, position="top-right"
+            dmc.NotificationHandler(id="handler"),
+            autoClose=False,
         ),
         dmc.Group(
             [
@@ -39,7 +40,7 @@ def notifications(show_click, update_click, hide_click):
         task = {
             **task,
             "props": {
-                "color": "red",
+                "color": "violet",
                 "title": "This is a notification",
                 "message": "Notifications in Dash Apps! Great!",
                 "loading": True,
