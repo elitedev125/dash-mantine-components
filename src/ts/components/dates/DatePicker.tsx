@@ -1,7 +1,7 @@
-import { DatePicker as MantineDatePicker } from "@mantine/dates";
+import { DateValue, DatePicker as MantineDatePicker } from "@mantine/dates";
 import { useDidUpdate } from "@mantine/hooks";
-import { DashBaseProps, PersistenceProps } from "props/dash";
-import { DatePickerBaseProps } from "props/dates";
+import { DashBaseProps } from "props/dash";
+import { DatePickerProps } from "props/dates";
 import { MantineStyleSystemProps, MantineStylesAPIProps } from "props/mantine";
 import React, { useState } from "react";
 import {
@@ -11,9 +11,8 @@ import {
     toStrings,
 } from "../../utils/dates";
 
-type Props = {} & DashBaseProps &
-    PersistenceProps &
-    DatePickerBaseProps &
+type Props = DatePickerProps &
+    DashBaseProps &
     MantineStylesAPIProps &
     MantineStyleSystemProps;
 
@@ -33,7 +32,7 @@ const DatePicker = (props: Props) => {
 
     const [date, setDate] = useState(toDates(value));
 
-    const onChange = (value: Date) => {
+    const onChange = (value: DateValue) => {
         setProps({ value: toStrings(value) });
     };
 
