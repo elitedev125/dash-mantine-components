@@ -1,6 +1,6 @@
 import { DateValue, DatePicker as MantineDatePicker } from "@mantine/dates";
 import { useDidUpdate } from "@mantine/hooks";
-import { DashBaseProps } from "props/dash";
+import { DashBaseProps, PersistenceProps } from "props/dash";
 import { DatePickerProps } from "props/dates";
 import { MantineStyleSystemProps, MantineStylesAPIProps } from "props/mantine";
 import React, { useState } from "react";
@@ -11,10 +11,14 @@ import {
     toStrings,
 } from "../../utils/dates";
 
-type Props = DatePickerProps &
+type Props = {
+    /** Specifies days that should be disabled */
+    disabledDates?: string[];
+} & DatePickerProps &
     DashBaseProps &
+    MantineStyleSystemProps &
     MantineStylesAPIProps &
-    MantineStyleSystemProps;
+    PersistenceProps;
 
 /** Inline date, multiple dates and dates range picker. */
 const DatePicker = (props: Props) => {
@@ -35,7 +39,7 @@ const DatePicker = (props: Props) => {
     const onChange = (d: DateValue) => {
         setDate(d);
     };
-    
+
     useDidUpdate(() => {
         setProps({ value: toStrings(date) });
     }, [date]);
