@@ -48,7 +48,7 @@ export type Props = {
     MantineStyleSystemProps &
     MantineStylesAPIProps;
 
-/** MultiSelect user input with any list of options */
+/** Custom searchable multi select */
 const MultiSelect = (props: Props) => {
     const { setProps, data, searchValue, value, ...other } = props;
 
