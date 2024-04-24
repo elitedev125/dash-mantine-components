@@ -1,10 +1,9 @@
 import { ScrollArea as MantineScrollArea } from "@mantine/core";
-import { BoxProps } from "props/box";
 import { DashBaseProps } from "props/dash";
-import { StylesApiProps } from "props/styles";
+import { ScrollAreaProps } from "props/scrollarea";
 import React from "react";
 
-interface Props extends BoxProps, StylesApiProps, DashBaseProps {
+interface Props extends ScrollAreaProps, DashBaseProps {
     /** Scrollbar size, any valid CSS value for width/height, numbers are converted to rem, default value is 0.75rem */
     scrollbarSize?: number | string;
     /**

@@ -5,6 +5,7 @@ import { __CloseButtonProps } from "props/button";
 import { ComboboxLikeProps } from "props/combobox";
 import { DashBaseProps, PersistenceProps } from "props/dash";
 import { __BaseInputProps } from "props/input";
+import { ScrollAreaProps } from "props/scrollarea";
 import { StylesApiProps } from "props/styles";
 import React, { useState } from "react";
 
@@ -35,6 +36,8 @@ interface Props
     clearButtonProps?: __CloseButtonProps;
     /** Props passed down to the hidden input */
     hiddenInputProps?: object;
+    /** Props passed down to the underlying `ScrollArea` component in the dropdown */
+    scrollAreaProps?: ScrollAreaProps;
 }
 
 /** Select */
