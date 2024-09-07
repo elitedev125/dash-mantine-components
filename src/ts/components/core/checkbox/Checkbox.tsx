@@ -1,4 +1,5 @@
 import {
+    CheckboxFactory,
     Checkbox as MantineCheckbox,
     MantineColor,
     MantineRadius,
@@ -6,12 +7,15 @@ import {
 } from "@mantine/core";
 import { BoxProps } from "props/box";
 import { DashBaseProps, PersistenceProps } from "props/dash";
-import { StylesApiProps } from "props/styles";
+import { StylesAPIProps } from "props/styles";
 import React from "react";
 
 interface Props
     extends BoxProps,
-        StylesApiProps,
+        StylesAPIProps<
+            CheckboxFactory["stylesNames"],
+            CheckboxFactory["variant"]
+        >,
         DashBaseProps,
         PersistenceProps {
     /** Content of the `label` associated with the checkbox */
@@ -42,11 +46,17 @@ interface Props
     checked?: boolean;
     /** Whether component is disabled */
     disabled?: boolean;
+    /** Icon */
+    icon?: React.ReactNode;
+    /** Indeterminate icon */
+    indeterminateIcon?: React.ReactNode;
 }
 
 /** Checkbox */
 const Checkbox = (props: Props) => {
     const {
+        icon,
+        indeterminateIcon,
         setProps,
         persistence,
         persisted_props,
@@ -54,8 +64,15 @@ const Checkbox = (props: Props) => {
         ...others
     } = props;
 
+    const iconFunc = ({ indeterminate, ...others }) => {
+        const selected: any = indeterminate ? indeterminateIcon : icon;
+        Object.assign(selected.props._dashprivate_layout.props, others);
+        return selected;
+    };
+
     return (
         <MantineCheckbox
+            icon={icon || indeterminateIcon ? iconFunc : undefined}
             onChange={(ev) => setProps({ checked: ev.currentTarget.checked })}
             {...others}
         />
