@@ -40,7 +40,10 @@ interface Props
     value?: string;
 }
 
-/** Chip */
+/**
+Chip for use with the ChipGroup.
+Must not set the `checked` prop because it conflicts with setting the value on the ChipGroup
+ **/
 const Chip = (props: Props) => {
     const {
         children,
@@ -48,18 +51,11 @@ const Chip = (props: Props) => {
         persistence,
         persisted_props,
         persistence_type,
+        checked,
         ...others
     } = props;
 
-    const onChange = (checked: boolean) => {
-        setProps({ checked });
-    };
-
-    return (
-        <MantineChip onChange={onChange} {...others}>
-            {children}
-        </MantineChip>
-    );
+    return <MantineChip {...others}>{children}</MantineChip>;
 };
 
 Chip.defaultProps = {
