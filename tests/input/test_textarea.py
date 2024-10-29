@@ -28,7 +28,7 @@ debounce = dmc.Stack([
 ])
 
 
-def test_001te_texarea(dash_duo):
+def test_001te_textarea(dash_duo):
     app = Dash(__name__)
 
     app.layout = dmc.MantineProvider(debounce)
@@ -43,9 +43,6 @@ def test_001te_texarea(dash_duo):
     )
     def update(d_true, d_false, d_2000):
         return d_true, d_false, d_2000
-
-
-
 
     dash_duo.start_server(app)
     # debounce=True
