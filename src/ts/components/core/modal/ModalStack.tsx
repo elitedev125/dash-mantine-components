@@ -2,7 +2,6 @@ import { Modal, useModalsStack } from '@mantine/core';
 import { useDidUpdate } from '@mantine/hooks';
 import React from 'react';
 import { DashBaseProps } from 'props/dash';
-import { StylesApiProps } from 'props/styles';
 import {
     getChildLayout,
     getLoadingState,
